@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito|Playfair+Display&display=swap');
+
+.cards-wrapper{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+  }
+  .card{
+	box-sizing: border-box;
+	height: auto;
+	width: 390px;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	margin: 20px;
+	border-radius: 10px;
+  }
+  .card .header{
+	height:auto;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	min-height: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 20px;
+	background: coral;
+	color: white;
+	font-family: 'Playfair Display', serif;
+	font-size: 25px;
+	clip-path: circle(60% at 0% 0%);
+	transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  .card .header h4{
+	opacity: 0;
+	transition: all  0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  .card:hover .header{
+	clip-path: circle(100% at 50% 50%);
+	background: salmon;
+  }
+  .card:hover .header h4{
+	opacity: 1;
+  }
+  .card .header h3, .card .header h4{
+	margin: 0!important;
+	padding: 0;
+  } 
+  .card .description{
+	padding: 20px;
+	font-family: 'Nunito', sans-serif;
+  
+  }
+  #myportfolio {
+	  background-color: #f0f8ff;
+	padding-top: 20em;
+    }
+  /* @media(max-width: 768px){
+	.cards-wrapper{
+	  flex-direction: column;
+	}
+	.card{
+	  width: 100%;
+	}
+      } */
+  

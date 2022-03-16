@@ -1,0 +1,203 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+
+@keyframes checked-anim {
+    50% {
+        width: 200px;
+        height: 200px;
+    }
+    100% {
+        width: 50%;
+        height: 40%;
+        border-bottom-right-radius:90%;
+    }
+}
+@keyframes not-checked-anim {
+    0% {
+        width: 3000px;
+        height: 3000px;
+    }
+}
+li, a {
+    margin: 75px 0 -55px 0;
+    color: #03A9F4;
+    font: 14pt "Roboto", sans-serif;
+    font-weight: 700;
+    line-height: 1.8;
+    text-decoration: none;
+    text-transform: none;
+    list-style: none;
+    outline: 0;
+    display: none;
+}
+li {
+    width: 230px;
+    text-indent: 56px;}
+a:hover {
+    display: block;
+    color: #333;
+	padding: 10px;
+	margin-left: 30px;
+	width: 180px;
+    background-color: rgba(107, 223, 217, 0.609);
+	border-bottom-right-radius: 50px;
+	border-top-right-radius:10px;
+    transition: all .5s;
+}
+aside {
+    position: fixed;
+    color: #084298;
+    top: 10%;
+    right: 30%;
+    text-align: right;
+	z-index: 3;
+}
+h1 {
+    line-height: 0;
+    font-size: 4vw;
+    font-weight: 700;
+}
+h3 {
+    float: right;
+    line-height: .3;
+    font-size: 2.5vw;
+    font-weight: lighter;
+}
+h4 {
+    float: left;
+    margin-left: -2%;
+    font-size: 1.5vw;
+    font-weight: lighter;
+}
+
+/* html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #03A9F4;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+} */
+
+#trigger, #burger, #burger:before, #burger:after {
+    position: fixed;
+    top: 40px;
+    left: 30px;
+    background: #03A9F4;
+    width: 30px;
+    height: 5px;
+    transition: .2s ease;
+    cursor: pointer;
+    z-index: 3;
+}
+#trigger {
+    height: 25px;
+    background: none;
+}
+#burger:before {
+    content: " ";
+    top: 50px;
+    left: 30;
+}
+#burger:after {
+    content: " ";
+    top: 60px;
+    left: 30;
+}
+#menu-toggle:checked + #trigger + #burger {
+    top: 35px;
+    transform: rotate(180deg);
+    transition: transform .2s ease;
+	z-index: 3;
+}
+
+#menu-toggle:checked + #trigger + #burger:before {
+    width: 20px;
+    top: -2px;
+    left: 18px;
+    transform: rotate(45deg) translateX(-5px);
+    transition: transform .2s ease;
+
+}
+#menu-toggle:checked + #trigger + #burger:after {
+    width: 20px;
+    top: 2px;
+    left: 18px;
+    transform: rotate(-45deg) translateX(-5px);
+    transition: transform .2s ease;
+}
+#menu {
+    position: fixed;
+    margin: 0; padding: 0;
+    width: 110px;
+    height: 110px;
+    background-color: #fff;
+    border-bottom-right-radius: 100%;
+	box-shadow: 0px 0px 5px rgb(0 0 0 / 42%);
+    animation: not-checked-anim .2s both;
+    transition: .2s;
+	z-index: 2;
+}
+#menu-toggle:checked + #trigger + #burger + #menu {
+    animation: checked-anim 0.3s ease both;
+	
+}
+#menu-toggle:checked + #trigger ~ #menu > li, a {
+    display: block;
+	z-index: 2;
+}
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    display: none;
+}
+
+/* Button a propos */
+.main-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #11111100;
+    color: rgb(107, 223, 217);
+}
+
+.button {
+  position: relative;
+  background-color: transparent;
+  padding: 10px 20px;
+  color: rgb(7, 143, 255);
+  border: none;
+  font-size: 1.9em;
+  transform: none;
+  cursor: pointer;
+}
+
+.button:after {
+  content: "";
+  height: 100%;
+  width: calc(100% + 20px);
+  position: absolute;
+  top: 2px;
+  left: -10px;
+  border-top: 2px solid rgb(202, 147, 147);
+  border-bottom: 2px solid rgb(202, 147, 147);
+  transition: 1s;
+}
+
+.button:before {
+  content:"";
+  height: calc(100% + 20px);
+  width: 100%;
+  position: absolute; 
+  top: -10px;
+  left: -2px;
+  border-left: 2px solid rgb(202, 147, 147);
+  border-right: 2px solid rgb(202, 147, 147);
+  transition: 1s;
+}
+
+.button:hover:before {
+  transform: rotateY(180deg);
+}
+
+.button:hover:after {
+  transform: rotateX(180deg);
+}
